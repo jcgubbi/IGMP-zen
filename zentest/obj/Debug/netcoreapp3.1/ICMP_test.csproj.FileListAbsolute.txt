@@ -1,0 +1,6 @@
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.csproj.AssemblyReference.cache
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.AssemblyInfoInputs.cache
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.AssemblyInfo.cs
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.csproj.CoreCompileInputs.cache
+/Users/Jivan/Projects/zentest/zentest/obj/Debug/netcoreapp3.1/ICMP_test.MvcApplicationPartsAssemblyInfo.cache
