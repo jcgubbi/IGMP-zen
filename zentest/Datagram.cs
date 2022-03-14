@@ -47,7 +47,12 @@ namespace ICMP_test
         /// <summary>
         /// ICMP Data
         /// </summary>
-        public IcmpPacket Data;
+        public IcmpPacket IcmpData;
+
+        /// <summary>
+		/// IGMP Data
+		/// </summary>
+		public IgmpPacket IgmpData;
 
         /// <summary>
         /// Create a Zen RR from a three tuple.
@@ -59,7 +64,8 @@ namespace ICMP_test
         /// <param name="Csum">Checksum</param>
         /// <param name="HLen">Header length</param>
         /// <param name="Options">Options (if any)</param>
-        /// <param name="Data">The ICMP Payload</param>
+        /// <param name="IcmpData">The ICMP Payload</param>
+        /// <param name="IgmpData">The ICMP Payload</param>
         /// <returns>A Zen IP Datagram.</returns>
         public static Zen<Datagram> Create(
             Zen<uint> src_ip,
@@ -69,7 +75,8 @@ namespace ICMP_test
             Zen<ushort> csum,
             Zen<byte> hlen,
             Zen<uint> opt,
-            Zen<IcmpPacket> data)
+            Zen<IcmpPacket> icmp_data,
+            Zen<IgmpPacket> igmp_data)
         {
             return Language.Create<Datagram>(
                 ("SrcIp", src_ip),
@@ -79,7 +86,8 @@ namespace ICMP_test
                 ("Csum", csum),
                 ("HLen", hlen),
                 ("Options", opt),
-                ("Data", data));
+                ("IcmpData", icmp_data),
+                ("IgmpData", igmp_data));
         }
 
         /// <summary>
@@ -96,7 +104,8 @@ namespace ICMP_test
                 Csum.Equals(other.Csum) &&
                 HLen.Equals(other.HLen) &&
                 Options.Equals(other.Options) &&
-                Data.Equals(other.Data);
+                IcmpData.Equals(other.IcmpData) &&
+                IgmpData.Equals(other.IgmpData);
         }
 
         /// <summary>
@@ -105,7 +114,7 @@ namespace ICMP_test
         /// <returns>The string.</returns>
         public override string ToString()
         {
-            return $"Src: {SrcIp}\nDst: {DstIp}\nTTL: {TTL}\nDF: {DF}\nChecksum: {Csum}\nHeader Length: {HLen}\nOptions: {Options}\nData: {Data}";
+            return $"Src: {SrcIp}\nDst: {DstIp}\nTTL: {TTL}\nDF: {DF}\nChecksum: {Csum}\nHeader Length: {HLen}\nOptions: {Options}\nIcmpData: {IcmpData}\nIgmpData: {IgmpData}";
         }
     }
 
@@ -163,7 +172,8 @@ namespace ICMP_test
         /// <returns>The options of the datagram.</returns>
         public static Zen<uint> GetOptions(this Zen<Datagram> dg) => dg.GetField<Datagram, uint>("Options");
 
-        public static Zen<IcmpPacket> GetICMPPacket(this Zen<Datagram> dg) => dg.GetField<Datagram, IcmpPacket>("Data"); 
-        
+        public static Zen<IgmpPacket> GetIGMPPacket(this Zen<Datagram> dg) => dg.GetField<Datagram, IgmpPacket>("IgmpData");
+
+        public static Zen<IcmpPacket> GetICMPPacket(this Zen<Datagram> dg) => dg.GetField<Datagram, IcmpPacket>("IcmpData");
     }
 }
