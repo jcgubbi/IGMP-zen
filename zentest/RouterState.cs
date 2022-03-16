@@ -22,6 +22,9 @@ namespace ICMP_test
 		public bool Header_problem;
 		public bool Dtg_fast;
 		public bool Same_network;
+		public HostState Host_state;
+		//public bool Host_query;
+		//public bool Host_report;
 
 		public Zen<RouterState> Create(
 			Zen<bool> dst_in_routing_table,
@@ -33,7 +36,8 @@ namespace ICMP_test
 			Zen<bool> to_fragment_dg,
 			Zen<bool> header_problem,
 			Zen<bool> dtg_fast,
-			Zen<bool> same_net)
+			Zen<bool> same_net,
+			Zen<HostState> host_state)
 		{
 			return Language.Create<RouterState>(
 				("Dst_in_routing_table", dst_in_routing_table),
@@ -45,7 +49,10 @@ namespace ICMP_test
 				("To_fragment_dg", to_fragment_dg),
 				("Header_problem", header_problem),
 				("Dtg_fast:", dtg_fast),
-				("Same_network", same_net));
+				("Same_network", same_net),
+				("Host state", host_state));
+				//("Host query", host_query),
+				//("Host report", host_report));
 		}
 
 		public override string ToString()
@@ -59,7 +66,11 @@ namespace ICMP_test
 				$"Datagram to be fragmented: {To_fragment_dg}\n" +
 				$"Header parameter problem: {Header_problem}\n" +
 				$"Datagrams arriving too fast: {Dtg_fast}\n" +
-				$"Host and next gateway on same network: {Same_network}\n";
+				$"Host and next gateway on same network: {Same_network}\n" +
+				$"Host state: {Host_state}\n";
+				//$"Host query: {Host_query}\n" +
+				//$"Host report: {Host_report}\n"
+				//;
 		}
 	}
 
@@ -85,5 +96,7 @@ namespace ICMP_test
 		public static Zen<bool> GetDtgFast(this Zen<RouterState> rs) => rs.GetField<RouterState, bool>("Dtg_fast");
 
 		public static Zen<bool> GetSameNet(this Zen<RouterState> rs) => rs.GetField<RouterState, bool>("Same_network");
+
+		public static Zen<HostState> GetHostState(this Zen<RouterState> rs) => rs.GetField<RouterState, HostState>("Host_state");
 	}
 }

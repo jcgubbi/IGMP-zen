@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Jivan/Desktop/zentest/zentest/ICMP_test.csproj": {}
+    "/Users/ShMac/Desktop/Projects/zentest2/zentest/zentest/ICMP_test.csproj": {}
   },
   "projects": {
-    "/Users/Jivan/Desktop/zentest/zentest/ICMP_test.csproj": {
+    "/Users/ShMac/Desktop/Projects/zentest2/zentest/zentest/ICMP_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jivan/Desktop/zentest/zentest/ICMP_test.csproj",
+        "projectUniqueName": "/Users/ShMac/Desktop/Projects/zentest2/zentest/zentest/ICMP_test.csproj",
         "projectName": "ICMP_test",
-        "projectPath": "/Users/Jivan/Desktop/zentest/zentest/ICMP_test.csproj",
-        "packagesPath": "/Users/Jivan/.nuget/packages/",
-        "outputPath": "/Users/Jivan/Desktop/zentest/zentest/obj/",
+        "projectPath": "/Users/ShMac/Desktop/Projects/zentest2/zentest/zentest/ICMP_test.csproj",
+        "packagesPath": "/Users/ShMac/.nuget/packages/",
+        "outputPath": "/Users/ShMac/Desktop/Projects/zentest2/zentest/zentest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Jivan/.config/NuGet/NuGet.Config"
+          "/Users/ShMac/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp5.0"

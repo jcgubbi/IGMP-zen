@@ -45,6 +45,33 @@
                 1,
                 0);
         }
+
+        // IgmpMain() is the wrapper function that takes a datagram, and router state as input and returns all kinds of error which is present in it 
+
+        public static Zen<IList<byte>> IgmpMain(Zen<Datagram> dtg, Zen<HostState> hs)
+        {
+            Zen<byte> v1 = HostQuery(dtg, hs);
+            Zen<byte> v2 = HostReport(dtg, hs);
+   
+
+            var d = If<byte>(
+                v1 != 0,
+                1,
+                0);
+            var t = If<byte>(
+                v2 != 0,
+                1,
+                0);
+            
+
+            //byte r9 = 5;
+
+            Zen<IList<byte>> err = List(d, t);
+            //return a*b + a*(1-b);
+            //return (r4 * r5 * r6 * r7 * r8);
+            return err;
+            //Console.WriteLine(v1+v2+v3+v4+v5+v6+v7+v8);
+        }
     }
 
 }
