@@ -54,30 +54,30 @@ foreach (var l in f4.GenerateInputs())
 int count = 0;
 // creating Zen function for IcmpMain()
 ZenFunction<Datagram, RouterState, IList<byte>> f5 = new ZenFunction<Datagram, RouterState, IList<byte>>(IcmpModel.IcmpMain);
-ZenFunction<Datagram, HostState, IList<byte>> f6 = new ZenFunction<Datagram, HostState, IList<byte>>(IgmpModel.IgmpMain);
+ZenFunction<Datagram, byte, byte, byte> f6 = new ZenFunction<Datagram, byte, byte, byte>(IgmpModel.IgmpMain);
 
-foreach (var l in f5.GenerateInputs()) // generate all possible inputs
-{
-    //Console.WriteLine("\n\n"+l);
-    //Console.WriteLine("output : "+f5.Evaluate(l.Item1,l.Item2));
-    //Console.WriteLine(out);
-    //Console.WriteLine(If<string>(f5.Evaluate(l.Item1, l.Item2) == 1, l, " "));
+//foreach (var l in f5.GenerateInputs()) // generate all possible inputs
+//{
+//    //Console.WriteLine("\n\n"+l);
+//    //Console.WriteLine("output : "+f5.Evaluate(l.Item1,l.Item2));
+//    //Console.WriteLine(out);
+//    //Console.WriteLine(If<string>(f5.Evaluate(l.Item1, l.Item2) == 1, l, " "));
 
-    //if (f5.Evaluate(l.Item1, l.Item2) == 1)
-    var err = f5.Evaluate(l.Item1, l.Item2); // for printing the kind of error in this particular input
-    Console.WriteLine("\n\n" + l + "output : " + err[0] + err[1] + err[2] + err[3] + err[4] + err[5] + err[6] + err[7]);
-    count++;
+//    //if (f5.Evaluate(l.Item1, l.Item2) == 1)
+//    var err = f5.Evaluate(l.Item1, l.Item2); // for printing the kind of error in this particular input
+//    Console.WriteLine("\n\n" + l + "output : " + err[0] + err[1] + err[2] + err[3] + err[4] + err[5] + err[6] + err[7]);
+//    count++;
 
-}
-Console.WriteLine("@@ Total cases : "+count);
+//}
+//Console.WriteLine("@@ Total cases : "+count);
 
 //////////// IGMP /////////////
 count = 0;
 foreach (var l in f6.GenerateInputs()) // generate all possible inputs
 { 
     //if (f5.Evaluate(l.Item1, l.Item2) == 1)
-    var err2 = f6.Evaluate(l.Item1, l.Item2); // for printing the kind of error in this particular input
-    Console.WriteLine("\n\n" + l + "IGMP output : " + err2[0] + err2[1]); // only 2 choices
+    var err2 = f6.Evaluate(l.Item1, l.Item2,l.Item3); // for printing the kind of error in this particular input
+    Console.WriteLine("\n\n" + l + "IGMP output : " + err2); // only 2 choices
     count++;
 
 }
