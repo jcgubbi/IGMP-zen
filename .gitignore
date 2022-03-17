@@ -1,3 +1,4 @@
 zentest/obj/*
+zentest/bin/Debug/*
 .vs/*
 .DS_Store
