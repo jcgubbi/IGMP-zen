@@ -54,7 +54,7 @@ foreach (var l in f4.GenerateInputs())
 int count = 0;
 // creating Zen function for IcmpMain()
 ZenFunction<Datagram, RouterState, IList<byte>> f5 = new ZenFunction<Datagram, RouterState, IList<byte>>(IcmpModel.IcmpMain);
-ZenFunction<Datagram, byte, byte, byte> f6 = new ZenFunction<Datagram, byte, byte, byte>(IgmpModel.IgmpMain);
+ZenFunction<Datagram, HostState, byte, byte, byte> f6 = new ZenFunction<Datagram, HostState, byte, byte, byte>(IgmpModel.IgmpMain);
 
 //foreach (var l in f5.GenerateInputs()) // generate all possible inputs
 //{
@@ -76,7 +76,7 @@ count = 0;
 foreach (var l in f6.GenerateInputs()) // generate all possible inputs
 { 
     //if (f5.Evaluate(l.Item1, l.Item2) == 1)
-    var err2 = f6.Evaluate(l.Item1, l.Item2,l.Item3); // for printing the kind of error in this particular input
+    var err2 = f6.Evaluate(l.Item1, l.Item2, l.Item3, l.Item4); // for printing the kind of error in this particular input
     Console.WriteLine("\n\n" + l + "IGMP output : " + err2); // only 2 choices
     count++;
 

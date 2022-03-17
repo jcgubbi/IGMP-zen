@@ -47,7 +47,7 @@ namespace ICMP_test
         public static Zen<ushort> GetCsum(this Zen<IgmpPacket> dg) => dg.GetField<IgmpPacket, ushort>("Csum");
 
         
-        public static Zen<uint> GetSeqNum(this Zen<IgmpPacket> dg) => dg.GetField<IgmpPacket, uint>("GroupAddress");
+        public static Zen<uint> GetGroupAddr(this Zen<IgmpPacket> dg) => dg.GetField<IgmpPacket, uint>("GroupAddress");
 
     }
 }
