@@ -42,7 +42,7 @@
             //                    BitwiseXor<bool>(is_nonmember, is_delayingmember),
             //                    BitwiseXor<bool>(is_idle, is_nonmember));
             var no_pairs = Or(And(is_idle == 1, is_nonmember == 0, is_delayingmember == 0),
-                                And(is_idle == 1, is_nonmember == 0, is_delayingmember ==0),
+                                And(is_idle == 0, is_nonmember == 1, is_delayingmember ==0),
                                 And(is_idle ==0, is_nonmember ==0, is_delayingmember==1)
                                 );
             //return And(at_least_one_state, no_pairs);
@@ -121,6 +121,7 @@
                 0);
             var nonmember = hs.GetNonMember() == is_nonmember;
 
+            var one_state = IsValidHostState(dtg, hs);
 
             //Zen<IList<byte>> err = List(d, t);
             //var err = d * t;
@@ -130,9 +131,13 @@
             //return a*b + a*(1-b);
             //return (r4 * r5 * r6 * r7 * r8);
             return If<byte>(
-                Or(delaying, idle),
+                And(Or(delaying, idle), one_state),
                 hostState * v1 * v2,
-                hostState * v1
+                If<byte>(
+                    And(nonmember, one_state),
+                    hostState*v1,
+                    0
+                    )
                 );
         }
     }
