@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "ICMP_test/1.0.0": {
         "dependencies": {
+          "DecisionDiagrams": "1.1.8",
           "Microsoft.Z3": "4.8.14",
           "ZenLib": "1.3.1",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -326,11 +327,11 @@
           "ICMP_test.dll": {}
         }
       },
-      "DecisionDiagrams/1.1.5": {
+      "DecisionDiagrams/1.1.8": {
         "runtime": {
           "lib/netstandard2.0/DecisionDiagrams.dll": {
-            "assemblyVersion": "1.1.5.0",
-            "fileVersion": "1.1.5.0"
+            "assemblyVersion": "1.1.8.0",
+            "fileVersion": "1.1.8.0"
           }
         },
         "compile": {
@@ -573,7 +574,7 @@
       },
       "ZenLib/1.3.1": {
         "dependencies": {
-          "DecisionDiagrams": "1.1.5",
+          "DecisionDiagrams": "1.1.8",
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.Z3.x64": "4.8.10",
           "System.Collections.Immutable": "5.0.0",
@@ -2295,12 +2296,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DecisionDiagrams/1.1.5": {
+    "DecisionDiagrams/1.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cnqNJjFt9yPT8oC5L1R6T4lxkA4rEZOW8yvvkimSw7Lc1PYLmDJrksS2mXCGTEIew7bZl2NOe+P8JUCufbpNrw==",
-      "path": "decisiondiagrams/1.1.5",
-      "hashPath": "decisiondiagrams.1.1.5.nupkg.sha512"
+      "sha512": "sha512-oMeOO6EP4EWLcxWCTv0VKZfMVeL1ISw6MAzyufAkXOpHxhbPk5MdqXC4Mi26aWvJOctugNo4mvubFDGMeHDy6g==",
+      "path": "decisiondiagrams/1.1.8",
+      "hashPath": "decisiondiagrams.1.1.8.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
